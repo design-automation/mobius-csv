@@ -1,7 +1,7 @@
 {
     "name": "mobius-papaparse",
     "license": "MIT",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "Patrick Janssen",
     "description": "Mobius library that wraps the papaparse library for working with CSV files.",
     "homepage": "https://github.com/design-automation/mobius-papaparse#readme",
