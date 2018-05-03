@@ -1,10 +1,10 @@
 {
-    "name": "mobius-papaparse",
+    "name": "mobius-csv",
     "license": "MIT",
     "version": "0.0.2",
     "author": "Patrick Janssen",
     "description": "Mobius library that wraps the papaparse library for working with CSV files.",
-    "homepage": "https://github.com/design-automation/mobius-papaparse#readme",
+    "homepage": "https://github.com/design-automation/mobius-csv#readme",
     "types": "dist/index.d.ts",
     "main": "dist/index.js",
     "directories": {
@@ -16,11 +16,11 @@
         "build": "tsc",
         "test": "karma start ./karma.conf.ts",
         "testsr": "karma start ./karma.conf.ts --single-run",
-        "docs": "typedoc --out ./docs --json ./docs_json/mobius-papaparse.json ./src/typescript --module commonjs --exclude \"**/*+(dev|tests).ts\" --mode modules  --excludeExternals"
+        "docs": "typedoc --out ./docs --json ./docs_json/mobius-csv.json ./src/typescript --module commonjs --exclude \"**/*+(dev|tests).ts\" --mode modules  --excludeExternals"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/design-automation/mobius-papaparse.git"
+        "url": "git+https://github.com/design-automation/mobius-csv.git"
     },
     "dependencies": {
         "@types/papaparse": "^4.1.34",
@@ -48,7 +48,7 @@
         "typescript": "^2.8.3"
     },
     "bugs": {
-        "url": "https://github.com/design-automation/mobius-papaparse/issues"
+        "url": "https://github.com/design-automation/mobius-csv/issues"
     },
     "keywords": [
         "csv"
