@@ -1,5 +1,7 @@
 /**
  * Functions for working with CSV files.
+ * These functions wrap the papaparse library.
+ * https://www.papaparse.com/docs
  */
 
 /**
