@@ -1,0 +1,216 @@
+{
+	"id": 0,
+	"name": "mobius-csv",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 12,
+			"name": "\"_export\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "D:/Dropbox/Files/Software/GitHub/design-automation/mobius-csv/src/typescript/_export.ts",
+			"sources": [
+				{
+					"fileName": "_export.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "\"csv\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "D:/Dropbox/Files/Software/GitHub/design-automation/mobius-csv/src/typescript/csv.ts",
+			"comment": {
+				"shortText": "Functions for working with CSV files.\nThese functions wrap the papaparse library.\nhttps://www.papaparse.com/docs"
+			},
+			"children": [
+				{
+					"id": 2,
+					"name": "parse",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 3,
+							"name": "parse",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Parse a csv file.\nhttps://www.papaparse.com/docs"
+							},
+							"parameters": [
+								{
+									"id": 4,
+									"name": "str",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ParseResult"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "csv.ts",
+							"line": 17,
+							"character": 21
+						}
+					]
+				},
+				{
+					"id": 5,
+					"name": "parseHasHeader",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 6,
+							"name": "parseHasHeader",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Parse a csv file, and assume that the first row is the header.\nhttps://www.papaparse.com/docs"
+							},
+							"parameters": [
+								{
+									"id": 7,
+									"name": "str",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ParseResult"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "csv.ts",
+							"line": 26,
+							"character": 30
+						}
+					]
+				},
+				{
+					"id": 8,
+					"name": "parseUseConfig",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 9,
+							"name": "parseUseConfig",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Parse a csv file, and supply a config object.\nhttps://www.papaparse.com/docs"
+							},
+							"parameters": [
+								{
+									"id": 10,
+									"name": "str",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 11,
+									"name": "config",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reference",
+										"name": "ParseConfig"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ParseResult"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "csv.ts",
+							"line": 35,
+							"character": 30
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						2,
+						5,
+						8
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "csv.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				12,
+				1
+			]
+		}
+	]
+}
