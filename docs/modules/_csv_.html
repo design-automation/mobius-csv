@@ -81,7 +81,6 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_csv_.html#parse" class="tsd-kind-icon">parse</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_csv_.html#parsehasheader" class="tsd-kind-icon">parse<wbr>Has<wbr>Header</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_csv_.html#parseuseconfig" class="tsd-kind-icon">parse<wbr>Use<wbr>Config</a></li>
 							</ul>
 						</section>
@@ -94,54 +93,52 @@
 					<a name="parse" class="tsd-anchor"></a>
 					<h3>parse</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">parse<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ParseResult</span></li>
+						<li class="tsd-signature tsd-kind-icon">parse<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, delimiter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ParseResult</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/design-automation/mobius-csv/blob/ef31f67/src/typescript/csv.ts#L17">csv.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/design-automation/mobius-csv/blob/343f485/src/typescript/csv.ts#L43">csv.ts:43</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Parse a csv file.
-									<a href="https://www.papaparse.com/docs">https://www.papaparse.com/docs</a></p>
+									<p>Parse a csv file.</p>
 								</div>
+								<p>If the delimeter is undefined, then the delimiting character will be
+								auto-detected from a list of common delimeters, including &quot;,&quot; and tab.</p>
+								<p>Returns a parse result object.
+									The parse result object always contains 1) a data array, 2) an errors array, and 3) a meta object.
+									The data array is an array of rows from teh csv.
+									The errors array is an array of errors generated during the process of parsing the csv.
+									The meta object contains extra information about the parse, such as delimiter used,
+								the newline sequence, whether the process was aborted, etc.</p>
+								<p>The rows in the data array will contain strings.
+									If numeric data is required, strings will need to be converted to numbers
+								using a string conversion function.</p>
+								<p>See <a href="https://www.papaparse.com/docs">https://www.papaparse.com/docs</a>.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>result = io.csv.parse(my_data)
+											parse_data = result.data
+											errors = result.errors
+										meta = result.meta</p>
+										<p>first_row = parsed_data[0]
+										second_row = parsed.data[1]</p>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>str: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The text from the csv file, as a string.</p>
+									</div>
 								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ParseResult</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="parsehasheader" class="tsd-anchor"></a>
-					<h3>parse<wbr>Has<wbr>Header</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">parse<wbr>Has<wbr>Header<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ParseResult</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/design-automation/mobius-csv/blob/ef31f67/src/typescript/csv.ts#L26">csv.ts:26</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Parse a csv file, and assume that the first row is the header.
-									<a href="https://www.papaparse.com/docs">https://www.papaparse.com/docs</a></p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
 								<li>
-									<h5>str: <span class="tsd-signature-type">string</span></h5>
+									<h5>delimiter: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ParseResult</span></h4>
@@ -158,14 +155,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/design-automation/mobius-csv/blob/ef31f67/src/typescript/csv.ts#L35">csv.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/design-automation/mobius-csv/blob/343f485/src/typescript/csv.ts#L54">csv.ts:54</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Parse a csv file, and supply a config object.
-									<a href="https://www.papaparse.com/docs">https://www.papaparse.com/docs</a></p>
+									<p>Parse a csv file, and supply a config object.</p>
 								</div>
+								<p>See <a href="https://www.papaparse.com/docs">https://www.papaparse.com/docs</a>.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -200,9 +197,6 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_csv_.html#parse" class="tsd-kind-icon">parse</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_csv_.html#parsehasheader" class="tsd-kind-icon">parse<wbr>Has<wbr>Header</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_csv_.html#parseuseconfig" class="tsd-kind-icon">parse<wbr>Use<wbr>Config</a>

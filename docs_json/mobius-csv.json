@@ -5,7 +5,7 @@
 	"flags": {},
 	"children": [
 		{
-			"id": 12,
+			"id": 10,
 			"name": "\"_export\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -50,7 +50,14 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"shortText": "Parse a csv file.\nhttps://www.papaparse.com/docs"
+								"shortText": "Parse a csv file.",
+								"text": "If the delimeter is undefined, then the delimiting character will be\nauto-detected from a list of common delimeters, including \",\" and tab.\n\nReturns a parse result object.\nThe parse result object always contains 1) a data array, 2) an errors array, and 3) a meta object.\nThe data array is an array of rows from teh csv.\nThe errors array is an array of errors generated during the process of parsing the csv.\nThe meta object contains extra information about the parse, such as delimiter used,\nthe newline sequence, whether the process was aborted, etc.\n\nThe rows in the data array will contain strings.\nIf numeric data is required, strings will need to be converted to numbers\nusing a string conversion function.\n\nSee [https://www.papaparse.com/docs](https://www.papaparse.com/docs).\n",
+								"tags": [
+									{
+										"tag": "example",
+										"text": "\nresult = io.csv.parse(my_data)\nparse_data = result.data\nerrors = result.errors\nmeta = result.meta\n\nfirst_row = parsed_data[0]\nsecond_row = parsed.data[1]\n"
+									}
+								]
 							},
 							"parameters": [
 								{
@@ -59,48 +66,17 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "The text from the csv file, as a string."
+									},
 									"type": {
 										"type": "intrinsic",
 										"name": "string"
 									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "ParseResult"
-							}
-						}
-					],
-					"sources": [
-						{
-							"fileName": "csv.ts",
-							"line": 17,
-							"character": 21
-						}
-					]
-				},
-				{
-					"id": 5,
-					"name": "parseHasHeader",
-					"kind": 64,
-					"kindString": "Function",
-					"flags": {
-						"isExported": true
-					},
-					"signatures": [
-						{
-							"id": 6,
-							"name": "parseHasHeader",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"comment": {
-								"shortText": "Parse a csv file, and assume that the first row is the header.\nhttps://www.papaparse.com/docs"
-							},
-							"parameters": [
+								},
 								{
-									"id": 7,
-									"name": "str",
+									"id": 5,
+									"name": "delimiter",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
@@ -119,13 +95,13 @@
 					"sources": [
 						{
 							"fileName": "csv.ts",
-							"line": 26,
-							"character": 30
+							"line": 43,
+							"character": 21
 						}
 					]
 				},
 				{
-					"id": 8,
+					"id": 6,
 					"name": "parseUseConfig",
 					"kind": 64,
 					"kindString": "Function",
@@ -134,17 +110,18 @@
 					},
 					"signatures": [
 						{
-							"id": 9,
+							"id": 7,
 							"name": "parseUseConfig",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"shortText": "Parse a csv file, and supply a config object.\nhttps://www.papaparse.com/docs"
+								"shortText": "Parse a csv file, and supply a config object.",
+								"text": "See [https://www.papaparse.com/docs](https://www.papaparse.com/docs).\n"
 							},
 							"parameters": [
 								{
-									"id": 10,
+									"id": 8,
 									"name": "str",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -155,7 +132,7 @@
 									}
 								},
 								{
-									"id": 11,
+									"id": 9,
 									"name": "config",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -177,7 +154,7 @@
 					"sources": [
 						{
 							"fileName": "csv.ts",
-							"line": 35,
+							"line": 54,
 							"character": 30
 						}
 					]
@@ -189,8 +166,7 @@
 					"kind": 64,
 					"children": [
 						2,
-						5,
-						8
+						6
 					]
 				}
 			],
@@ -208,7 +184,7 @@
 			"title": "External modules",
 			"kind": 1,
 			"children": [
-				12,
+				10,
 				1
 			]
 		}
